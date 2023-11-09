@@ -1,0 +1,32 @@
+<p>component2 works!sss</p>
+
+@if(countTracker() > 0)
+{
+    @switch (countTracker()) 
+    {
+        @case (4)
+        {
+            <p>Count is 4</p>
+        }
+        @case (5)
+        {
+            <p>Count 5</p>
+        }
+        @case (9){<p>Count is 9</p>}
+        @default
+        {
+            <p>Count is not valid</p>
+        }
+    }
+    <p>{{countTracker()}}</p>
+}
+
+@for (item of items; track $index) 
+{
+    <p>{{item}}</p>
+}
+@empty {<p>items is empty</p>}
+
+<button type="button" (click)="increase()">Increase</button>
+
+<button type="button" (click)="decrease()">Decrease</button>
